@@ -243,8 +243,10 @@
 
 		let html = "";
 
+		console.log({ state });
+
 		// Add active option if not main menu
-		if (state.currentLevel !== "main") {
+		if (state.currentLevel !== "main" && state.currentParent !== 0) {
 			html += `<div class="aion-option-button active">${state.currentLevel}</div>`;
 			html += "<hr>";
 		}
