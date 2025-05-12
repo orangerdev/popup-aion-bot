@@ -75,6 +75,7 @@ class Aion_Popup_Public {
 		wp_localize_script( $this->plugin_name, 'aion_popup_vars', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'nonce' => wp_create_nonce( 'aion_popup_nonce' ),
+			'plugin_url' => AION_POPUP_PLUGIN_URL,
 		) );
 	}
 
@@ -225,9 +226,9 @@ class Aion_Popup_Public {
 			);
 		}
 
-		// Get custom fields
-		$download_url = get_post_meta( $option_id, 'aion_download_url', true );
-		$direct_link = get_post_meta( $option_id, 'aion_direct_link', true );
+		// Get custom fields using Carbon Fields
+		$download_url = Aion_Popup_Carbon::get_post_meta( $option_id, 'aion_download_url', '' );
+		$direct_link = Aion_Popup_Carbon::get_post_meta( $option_id, 'aion_direct_link', '' );
 
 		return array(
 			'content' => apply_filters( 'the_content', $post->post_content ),

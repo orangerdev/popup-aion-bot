@@ -16,8 +16,8 @@
 /* Popup Container */
 .aion-chatbot-popup {
 	position: fixed;
-	bottom: 100px;
-	right: 20px;
+	bottom: 20px;
+	right: 90px;
 	width: 360px;
 	max-width: 90vw;
 	height: 600px;
@@ -25,6 +25,7 @@
 	background-color: var(--aion-light);
 	border-radius: 12px;
 	box-shadow: 0 5px 25px var(--aion-shadow);
+	border-top: 2px solid #666;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -50,7 +51,7 @@
 	align-items: center;
 	background-image: url("../images/wave-pattern.png");
 	background-size: cover;
-	background-position: center;
+	background-position: 0 0;
 }
 
 .aion-chatbot-logo {
@@ -87,17 +88,18 @@
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
+	background-color: #f5f5f5;
 }
 
 .aion-chatbot-message {
 	display: flex;
 	margin-bottom: 20px;
+	gap: 0.75rem;
 }
 
 .aion-chatbot-avatar {
 	width: 40px;
 	height: 40px;
-	margin-right: 12px;
 	flex-shrink: 0;
 }
 
@@ -109,10 +111,10 @@
 }
 
 .aion-chatbot-text {
-	background-color: var(--aion-gray);
-	border-radius: 0 12px 12px 12px;
-	padding: 12px 15px;
-	max-width: 80%;
+	background-color: var(--aion-light);
+	border-radius: 0.75rem;
+	padding: 12px 1rem;
+	box-shadow: 0 2px 10px var(--aion-shadow);
 }
 
 .aion-chatbot-text p {
@@ -143,24 +145,29 @@
 	font-weight: 500;
 	color: var(--aion-secondary);
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 3px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.01);
 }
 
 .aion-option-button:hover {
-	background-color: var(--aion-gray);
+	border-color: var(--aion-primary);
+	transform: translateY(-2px);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05),
+		0px 8px 16px rgba(0, 0, 0, 0.03);
 }
 
 .aion-option-button.active {
 	background-color: var(--aion-primary);
 	color: var(--aion-light);
 	border-color: var(--aion-primary);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .aion-option-content {
-	margin-top: 15px;
-	padding: 15px;
 	background-color: var(--aion-light);
-	border-radius: 8px;
 }
 
 .aion-option-content h3 {
@@ -174,12 +181,15 @@
 .aion-chatbot-navigation {
 	display: flex;
 	gap: 10px;
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .aion-back-button,
 .aion-main-menu-button {
 	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--aion-light);
 	border: 1px solid var(--aion-border);
 	border-radius: 8px;
@@ -188,12 +198,27 @@
 	font-weight: 500;
 	color: var(--aion-secondary);
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
+	gap: 5px;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 3px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.01);
+}
+
+.aion-back-button img,
+.aion-main-menu-button img {
+	width: 16px;
+	height: 16px;
+	object-fit: contain;
 }
 
 .aion-back-button:hover,
 .aion-main-menu-button:hover {
 	background-color: var(--aion-gray);
+	border-color: var(--aion-primary);
+	transform: translateY(-2px);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05),
+		0px 8px 16px rgba(0, 0, 0, 0.03);
 }
 
 /* Footer */
@@ -211,31 +236,41 @@
 
 /* Close Button */
 .aion-chatbot-close {
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 	right: 20px;
-	width: 40px;
-	height: 40px;
-	background-color: #ffffff;
-	border: none;
+	width: 50px;
+	height: 50px;
 	border-radius: 50%;
+	background: #ffffff;
+	border: 1px solid #333333;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all 0.2s ease;
-	box-shadow: 0 2px 10px var(--aion-shadow);
+	transition: all 0.3s ease;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 3px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.01);
 	z-index: 10000;
-}
-
-.aion-chatbot-close img {
-	width: 20px;
-	height: 20px;
-	object-fit: contain;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .aion-chatbot-close:hover {
-	transform: scale(1.1);
+	transform: scale(1.05) translateY(-2px);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05),
+		0px 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.aion-chatbot-popup.active ~ .aion-chatbot-trigger .aion-chatbot-toggle {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.aion-chatbot-popup.active ~ .aion-chatbot-close {
+	opacity: 1;
+	visibility: visible;
 }
 
 /* Trigger Button */
@@ -290,14 +325,20 @@
 	width: 60px;
 	height: 60px;
 	border-radius: 12px;
-	background-color: var(--aion-primary);
+	background: #ffffff;
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 31%,
+		rgba(205, 251, 239, 1) 77%
+	);
 	border: none;
-	box-shadow: 0 2px 10px var(--aion-shadow);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 3px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.01);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
 }
 
 .aion-chatbot-toggle img {
@@ -307,11 +348,16 @@
 }
 
 .aion-chatbot-toggle:hover {
-	transform: scale(1.05);
+	transform: scale(1.05) translateY(-2px);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05),
+		0px 8px 16px rgba(0, 0, 0, 0.03);
 }
 
 .aion-chatbot-toggle.active {
 	transform: scale(0.95);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Loading */
@@ -333,7 +379,9 @@
 }
 
 .aion-action-button {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 	width: 100%;
 	background-color: var(--aion-light);
 	border: 1px solid var(--aion-border);
@@ -345,12 +393,25 @@
 	color: var(--aion-secondary);
 	cursor: pointer;
 	margin-top: 10px;
-	transition: all 0.2s ease;
+	transition: all 0.3s ease;
 	text-decoration: none;
+	gap: 8px;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 3px rgba(0, 0, 0, 0.05), 0px 4px 5px rgba(0, 0, 0, 0.01);
 }
 
 .aion-action-button:hover {
-	background-color: var(--aion-gray);
+	border-color: var(--aion-primary);
+	transform: translateY(-2px);
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.09),
+		0px 2px 4px rgba(0, 0, 0, 0.09), 0px 4px 8px rgba(0, 0, 0, 0.05),
+		0px 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.aion-button-icon {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
 }
 
 /* Responsive */

@@ -1,114 +1,98 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+=== AION Popup Chatbot ===
+Contributors: ridwanarifandi
 Donate link: https://ridwan-arifandi/
-Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Tags: chatbot, popup, aion, electric vehicles, customer support
+Requires at least: 5.0
+Tested up to: 6.4
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+A WordPress plugin that adds a floating chatbot popup to your website for providing information about AION electric vehicles.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+AION Popup Chatbot is a WordPress plugin designed to enhance user engagement on websites featuring AION electric vehicles. The plugin creates a floating chatbot interface that appears on all pages of your WordPress site, providing visitors with easy access to information about AION vehicles and services.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+= Key Features =
 
-A few notes about the sections above:
-
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+* **Floating Chatbot Interface**: Appears on all pages without requiring shortcodes
+* **Hierarchical Navigation**: Organizes information in an intuitive, nested menu structure
+* **Quick Access Buttons**: Provides direct access to brochures, location information, WhatsApp contact, and test drive scheduling
+* **Responsive Design**: Works seamlessly on both desktop and mobile devices
+* **Easy Content Management**: Uses WordPress custom post types for simple content updates
+* **Back and Main Menu Navigation**: Allows users to easily navigate through the chatbot options
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload `aion-popup.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Upload the `popup-aion-bot` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Add your chatbot content by creating entries in the 'Chat Options' section of the WordPress admin
+4. The chatbot will automatically appear on all pages of your site
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= How do I add content to the chatbot? =
 
-An answer to that question.
+Create entries in the 'Chat Options' custom post type. You can create a hierarchical structure by setting parent-child relationships between posts.
 
-= What about foo bar? =
+= Can I customize the appearance of the chatbot? =
 
-Answer to foo bar dilemma.
+Yes, you can modify the CSS in the `public/css/aion-popup-public.css` file to match your website's design.
+
+= Does the chatbot work on mobile devices? =
+
+Yes, the chatbot is fully responsive and works well on both desktop and mobile devices.
+
+= Can I add links to external resources? =
+
+Yes, each chat option can include download URLs or direct links using the custom fields provided in the edit screen.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. The AION Chatbot popup interface showing the main menu options
+2. The floating chatbot button in the bottom-right corner of the website
+3. Example of hierarchical navigation within the chatbot
+4. Quick access buttons for brochures, location, WhatsApp, and test drive scheduling
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+= 1.0.0 =
+* Initial release
+* Floating chatbot interface with toggle button
+* Hierarchical navigation system
+* Quick access buttons for key information
+* Responsive design for all devices
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 1.0.0 =
+Initial release of the AION Popup Chatbot plugin.
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
+== Content Structure ==
 
-== Arbitrary section ==
+The plugin uses a custom post type called 'aion_options' to organize the chatbot content:
 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
+1. **Parent Options**: Create top-level menu items as parent posts
+2. **Child Options**: Create sub-menu items by setting a parent for the post
+3. **Content**: Add detailed information in the post editor
+4. **Additional Links**: Add download URLs or direct links using the custom fields
 
-== A brief Markdown Example ==
+== Customization ==
 
-Ordered list:
+= Images =
 
-1. Some feature
-1. Another feature
-1. Something else about the plugin
+The plugin requires the following images in the `public/images` folder:
 
-Unordered list:
+1. `aion-logo.png` - The AION logo used in the header and avatar
+2. `wave-pattern.png` - Background pattern for the header
+3. `brochure-icon.png` - Icon for the brochure button
+4. `location-icon.png` - Icon for the location button
+5. `whatsapp-icon.png` - Icon for the WhatsApp button
+6. `test-drive-icon.png` - Icon for the test drive button
+7. `chatbot-icon.png` - Icon for the main chatbot toggle button
+8. `close-icon.png` - Icon for the close button
 
-* something
-* something else
-* third thing
+= CSS Styling =
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+You can customize the appearance of the chatbot by modifying the CSS in `public/css/aion-popup-public.css`.

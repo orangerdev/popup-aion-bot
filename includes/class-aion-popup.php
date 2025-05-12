@@ -122,7 +122,15 @@ class Aion_Popup {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-aion-popup-public.php';
 
+		/**
+		 * The class responsible for Carbon Fields integration.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-aion-popup-carbon.php';
+
 		$this->loader = new Aion_Popup_Loader();
+
+		// Initialize Carbon Fields
+		new Aion_Popup_Carbon();
 
 	}
 
@@ -156,12 +164,6 @@ class Aion_Popup {
 
 		// Register custom post type
 		$this->loader->add_action( 'init', $plugin_admin, 'register_custom_post_type' );
-
-		// Register meta boxes
-		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'register_meta_boxes' );
-
-		// Save meta box data
-		$this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_box' );
 
 	}
 

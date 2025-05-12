@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       AION popup bot
  * Plugin URI:        https://ridwan-arifandi.com
- * Description:       Custom popup chatbot for AION 
+ * Description:       Custom popup chatbot for AION
  * Version:           1.0.0
  * Author:            Ridwan Arifandi
  * Author URI:        https://ridwan-arifandi/
