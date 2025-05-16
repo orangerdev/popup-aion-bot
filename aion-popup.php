@@ -65,6 +65,9 @@ register_deactivation_hook( __FILE__, 'deactivate_aion_popup' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
+
+// Use our custom autoloader to prevent conflicts
+require plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 require plugin_dir_path( __FILE__ ) . 'includes/class-aion-popup.php';
 
 /**
