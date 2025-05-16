@@ -28,10 +28,8 @@ $greeting_parts = explode( "\n", $greeting );
 		<div class="aion-chatbot-logo">
 			<img src="<?php echo AION_POPUP_PLUGIN_URL; ?>public/images/aion-logo.svg" alt="AION Logo">
 		</div>
-		<div class="aion-chatbot-title">
-			<h2><?php echo esc_html( $title ); ?></h2>
-			<p><?php echo esc_html( $description ); ?></p>
-		</div>
+		<h2 class="header-title"><?php echo esc_html( $title ); ?></h2>
+		<p class="header-description"><?php echo esc_html( $description ); ?></p>
 	</div>
 
 	<div class="aion-chatbot-content">

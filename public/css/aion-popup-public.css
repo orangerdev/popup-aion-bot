@@ -46,18 +46,22 @@
 .aion-chatbot-header {
 	background-color: var(--aion-secondary);
 	color: var(--aion-light);
-	padding: 15px 20px;
-	display: flex;
-	align-items: center;
+	padding: 1rem 20px;
+	display: grid;
+	gap: 10px;
 	background-image: url("../images/wave-pattern.png");
 	background-size: cover;
 	background-position: 0 0;
+	grid-template-columns: 50px 1fr;
+	grid-template-areas:
+		"logo title"
+		"description description";
 }
 
 .aion-chatbot-logo {
+	grid-area: logo;
 	width: 50px;
 	height: 50px;
-	margin-right: 15px;
 	flex-shrink: 0;
 }
 
@@ -68,16 +72,16 @@
 	border-radius: 50%;
 }
 
-.aion-chatbot-title h2 {
-	margin: 0 0 5px;
+.aion-chatbot-header h2 {
+	grid-area: title;
 	font-size: 20px;
 	font-weight: 600;
 }
 
-.aion-chatbot-title p {
+.aion-chatbot-header p {
+	grid-area: description;
 	margin: 0;
 	font-size: 14px;
-	opacity: 0.9;
 	line-height: 1.4;
 }
 
