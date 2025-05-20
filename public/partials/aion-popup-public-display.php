@@ -87,6 +87,6 @@ $greeting_parts = explode( "\n", $greeting );
 		</button>
 	</div> -->
 	<button class="aion-chatbot-toggle">
-		<img src="<?php echo AION_POPUP_PLUGIN_URL; ?>public/images/chatbot.svg" alt="Chat Bot" />
+		<img src="<?php echo AION_POPUP_PLUGIN_URL; ?>public/images/chatbot-v2.svg" alt="Chat Bot" />
 	</button>
 </div>

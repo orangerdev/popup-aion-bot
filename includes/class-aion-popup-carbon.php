@@ -1,5 +1,8 @@
 <?php
 
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
 /**
  * The Carbon Fields integration file
  *
@@ -52,22 +55,22 @@ class Aion_Popup_Carbon {
 	 * @since    1.0.0
 	 */
 	public function register_plugin_options() {
-		\Carbon_Fields\Container::make( 'theme_options', __( 'Settings', 'aion-popup' ) )
+		Container::make( 'theme_options', __( 'Settings', 'aion-popup' ) )
 			->set_page_parent( 'edit.php?post_type=' . AION_CUSTOM_POST_TYPE )
 			->add_fields( array(
-				\Carbon_Fields\Field::make( 'text', 'aion_chatbot_title', __( 'ChatBot Title', 'aion-popup' ) )
+				Field::make( 'text', 'aion_chatbot_title', __( 'ChatBot Title', 'aion-popup' ) )
 					->set_default_value( 'AION ChatBot' )
 					->set_help_text( __( 'The title displayed in the chatbot header', 'aion-popup' ) ),
 
-				\Carbon_Fields\Field::make( 'textarea', 'aion_chatbot_description', __( 'ChatBot Description', 'aion-popup' ) )
+				Field::make( 'textarea', 'aion_chatbot_description', __( 'ChatBot Description', 'aion-popup' ) )
 					->set_default_value( 'Asisten virtual untuk info cepat dan mudah seputar mobil listrik AION.' )
 					->set_help_text( __( 'The description displayed in the chatbot header', 'aion-popup' ) ),
 
-				\Carbon_Fields\Field::make( 'textarea', 'aion_chatbot_greeting', __( 'ChatBot Greeting', 'aion-popup' ) )
+				Field::make( 'textarea', 'aion_chatbot_greeting', __( 'ChatBot Greeting', 'aion-popup' ) )
 					->set_default_value( "Halo! Selamat datang di AION ChatBot.🚗\nSaya siap membantu Anda mendapatkan informasi seputar:" )
 					->set_help_text( __( 'The greeting message displayed when the chatbot is opened', 'aion-popup' ) ),
 
-				\Carbon_Fields\Field::make( 'text', 'aion_chatbot_footer', __( 'ChatBot Footer', 'aion-popup' ) )
+				Field::make( 'text', 'aion_chatbot_footer', __( 'ChatBot Footer', 'aion-popup' ) )
 					->set_default_value( 'GAC Indonesia' )
 					->set_help_text( __( 'The text displayed in the chatbot footer', 'aion-popup' ) ),
 			) );
@@ -79,13 +82,15 @@ class Aion_Popup_Carbon {
 	 * @since    1.0.0
 	 */
 	public function register_post_meta() {
-		\Carbon_Fields\Container::make( 'post_meta', __( 'Chat Option Settings', 'aion-popup' ) )
+		Container::make( 'post_meta', __( 'Chat Option Settings', 'aion-popup' ) )
 			->where( 'post_type', '=', AION_CUSTOM_POST_TYPE )
 			->add_fields( array(
-				\Carbon_Fields\Field::make( 'url', 'aion_download_url', __( 'Download URL', 'aion-popup' ) )
+				Field::make( 'text', 'aion_download_url', __( 'Download URL', 'aion-popup' ) )
+					->set_attribute( 'type', 'url' )
 					->set_help_text( __( 'Enter the URL for the downloadable file (e.g., brochure)', 'aion-popup' ) ),
 
-				\Carbon_Fields\Field::make( 'url', 'aion_direct_link', __( 'Direct Link', 'aion-popup' ) )
+				Field::make( 'text', 'aion_direct_link', __( 'Direct Link', 'aion-popup' ) )
+					->set_attribute( 'type', 'url' )
 					->set_help_text( __( 'Enter a direct link to an external resource', 'aion-popup' ) ),
 			) );
 	}
