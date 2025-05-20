@@ -252,14 +252,12 @@
 	position: fixed;
 	bottom: 115px;
 	right: 32px;
-	width: 33px;
-	height: 33px;
+	width: 37px;
+	height: 37px;
 	padding: 2px;
 	border-radius: 5px;
 	border: 2px solid rgb(45, 204, 211);
-	border-radius: 5px;
 	background: #ffffff;
-	border: 1px solid rgb(45, 204, 211);
 	display: flex;
 	align-items: center;
 	justify-content: center;
